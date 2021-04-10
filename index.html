@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Student Management</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" >
+        <style>
+            .container{
+                height: 80%;
+                width: auto;
+                border: 1px solid #000;
+            }
+            #head{
+                height: 70px;
+                width: 100%;
+                background-color: red;
+                margin: 0px;
+                padding: 0px;
+                color: #fff;
+                float: left;
+
+            }
+            
+            .footer{
+                height:50px;
+                width: 100%;
+                background-color: red;
+                margin: 0px;
+                padding: 10px;
+                color: #fff;
+                float: left;
+                text-align:center;
+            }
+            #headingsec{
+                margin-top: -21px;
+                padding-left: 10px;
+                width: 50%;
+                float: left;
+            }
+            
+                 #footersec{
+                margin-top: -21px;
+                padding-left: 10px;
+                width: 50%;
+                float: left;
+            }
+            #menus{
+                float: right;
+                width: 46%;
+            }
+            .menulist{
+                list-style: none;
+                padding: 5px;
+            }
+            .menulist li{
+                float: left;
+                width: auto;
+                margin-left: 10px;
+                border-right: 1px solid #fff;
+                padding: 2px;
+            }
+            .menulist li a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 25px;
+                font-weight: bold;
+                   
+            }
+
+            #student_form{
+                margin: auto;
+                width: 80%;
+                border: 3px solid #73AD21;
+                padding: 10px;
+            }
+            
+            input[type=text], select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            
+            .contentsec{
+                border: 1px solid green;
+                height: 500px;
+                width: 100%;
+                float: left;
+                margin-top: 1px;
+               
+            }
+            
+          </style>
+          <script type="text/javascript">
+              function Validation(){
+                  var fname= document.getElementById("firstname").value;
+                  if(fname ==""){
+                      alert("First Name Required");
+                      return false;
+                  }
+                   var emailid= document.getElementById("emailid").value;
+                  if(emailid ==""){
+                      alert("Email Id Required");
+                      return false;
+                  }
+              }
+        
+          </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header" id="head">
+                <div id="headingsec"><h1 style="padding: 10px;">Student Management</h1></div>
+                <div id="menus">
+                    <ul class="menulist">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        <div class="contentsec">
+            <h3 style="text-align: center;"> Registration Form</h3>
+
+            <div id='student_form' class="row">
+                <div class="col-lg-6">
+                    <label> First name:</label> 
+                    <input type="text" class="form-control" name="firstname" value="" id="firstname">
+                    
+                </div>
+                
+                 <div class="col-lg-6">
+                    <label>Last name: </label> 
+                    <input type="text" class="form-control" name="lastname" value="" id="lastname">
+
+                </div>
+                 
+                <div class="col-lg-6">
+                    <label>Email:</label> 
+                    <input type="email" class="form-control" name="email" value="" id="emailid">
+
+                </div>
+                
+                 <div class="col-lg-6">
+                     <label>Contact no:</label> 
+                    <input type="number" class="form-control" name="contactno" value="" id="contactno">
+
+
+                </div>
+                    
+
+                <input type="button" id="save" class="btn btn-Primary" value="Save" onclick="Validation();">
+
+            </div>
+
+         
+        </div>
+        
+         <footer>
+                <div class="footer"><span>&copy;All Rights Reserved By BRAC</span>
+                </div>
+               </footer>
+            
+        </div>
+     
+           
+
+    </body>
+    
+</html>

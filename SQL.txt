@@ -1,0 +1,66 @@
+CREATE TABLE student(
+id int(10) unsigned AUTO_INCREMENT,
+    name varchar(50) NOT NULL,
+    age int(10) NOT NULL,
+    contact varchar(15) NOT NULL,
+    PRIMARY KEY(ID))
+
+CREATE TABLE student_detail(
+id int(10) unsigned AUTO_INCREMENT,
+   sid int(10)unsigned NOT NULL,
+   subject varchar(50) NOT NULL,
+    FOREIGN KEY(sid)REFERENCES
+    student (id),
+    PRIMARY KEY(id))
+
+
+INSERT INTO student(name,age,contact) VALUES('8',21,'07015321')
+
+INSERT INTO student_detail(id,sid,subject) VALUES(1,1,'cse'),(2,1,'eng'),(3,1,'php'),
+(4,2,'electronics'),
+(5,3,'soft skills')
+
+SELECT * FROM student
+SELECT id,name,age FROM student
+
+
+SELECT id,name,contact FROM student WHERE id=1
+SELECT id,name,contact,age FROM student WHERE name LIKE 'A%'
+
+SELECT sid,subject FROM student_detail GROUP BY subject
+SELECT sid,subject FROM student_detail WHERE subject='cse' GROUP BY subject
+
+SELECT * FROM student ORDER BY id DESC
+SELECT * FROM student ORDER BY RAND() LIMIT 10
+
+DELETE student 
+ALTER TABLE student ADD address varchar(250)
+
+UPDATE student SET address='dhaka'
+UPDATE student SET address='dhaka' WHERE id=1
+
+SELECT * FROM student WHERE age=20 and name LIKE 'A%' ORDER BY age ASC
+SELECT * FROM student_detail WHERE sid IN(3,2,1)
+
+SELECT COUNT(*) AS total FROM student
+SELECT DISTINCT age,name FROM student
+
+SELECT st.*,sd.* FROM student AS st 
+LEFT JOIN student_detail AS sd ON
+st.id=sd.sid 
+
+SELECT st.* FROM student AS st 
+LEFT JOIN student_detail sd ON
+st.id=sd.sid WHERE sd.sid is null 
+
+SELECT st.*,sd.* FROM student AS st 
+RIGHT JOIN student_detail sd ON
+st.id=sd.sid 
+
+SELECT st.*,sd.* FROM student AS st 
+INNER JOIN student_detail sd ON
+st.id=sd.sid
+
+SELECT YEAR(CURDATE()),MONTH((CURDATE)),DAY(CURDATE())
+
+SELECT * FROM student where id IN(SELECT sid FROM student_detail)
